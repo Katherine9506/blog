@@ -36,7 +36,8 @@
             @foreach($posts as $post)
                 <div class="blog-post">
                     <h2 class="blog-post-title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
-                    <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} by <a href="/user/5">KassandraAnkunding2</a>
+                    <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} by <a
+                                href="/user/5">{{$post->user->name}}</a>
                     </p>
 
                     {!! str_limit($post->content,100,'...') !!}
