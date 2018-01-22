@@ -2,6 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Post;
+use App\Topic;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -14,8 +17,6 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        Topic::create(['name' => '经典']);
     }
 }

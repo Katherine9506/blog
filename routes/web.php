@@ -31,6 +31,7 @@ Route::get('/user/me/setting', 'UserController@setting');
 //个人设置操作
 Route::post('/user/me/setting', 'UserController@settingStore');
 
+include_once('admin.php');
 
 //文章列表页
 Route::get('/posts', 'PostController@index');
@@ -47,6 +48,24 @@ Route::get('/posts/{post}/delete', 'PostController@delete');
 //图片上传
 Route::post('/posts/img/upload', 'PostController@imageUpload');
 //提交评论
-Route::post('/posts/{post}/comment','PostController@comment');
+Route::post('/posts/{post}/comment', 'PostController@comment');
+//赞
+Route::get('/posts/{post}/zan', 'PostController@zan');
+//取消赞
+Route::get('/posts/{post}/unzan', 'PostController@unzan');
+
+//个人中心
+Route::get('/user/{user}', 'UserController@show');
+//关注
+Route::post('/user/{user}/fan', 'UserController@fan');
+//取消关注
+Route::post('/user/{user}/unfan', 'UserController@unfan');
+
+//专题详情页
+Route::get('/topic/{topic}', 'TopicController@show');
+//投稿
+Route::post('/topic/{topic}/submit', 'TopicController@submit');
+//专题列表
+
 
 
