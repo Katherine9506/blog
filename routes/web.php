@@ -34,7 +34,7 @@ Route::post('/user/me/setting', 'UserController@settingStore');
 include_once('admin.php');
 
 //文章列表页
-Route::get('/posts', 'PostController@index');
+Route::get('/articles', 'PostController@index')->name('posts.list');
 //创建文章
 Route::get('/posts/create', 'PostController@create');
 Route::post('/posts/', 'PostController@store');
@@ -65,7 +65,10 @@ Route::post('/user/{user}/unfan', 'UserController@unfan');
 Route::get('/topic/{topic}', 'TopicController@show');
 //投稿
 Route::post('/topic/{topic}/submit', 'TopicController@submit');
-//专题列表
+
+//通知
+Route::get('/notices', 'NoticeController@index');
+
 
 
 

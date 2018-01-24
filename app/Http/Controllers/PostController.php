@@ -76,7 +76,7 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect("/posts");
+        return redirect(route('posts.list'));
     }
 
     //上传图片

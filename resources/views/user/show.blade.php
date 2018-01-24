@@ -8,7 +8,7 @@
 
 
             <footer>关注：{{$user->stars_count}}｜粉丝：{{$user->fans_count}}｜文章：{{$user->posts_count}}</footer>
-            @include('admin.user.badget.like',['target_user'=>$user])
+            @include('user.badget.like',['target_user'=>$user])
         </blockquote>
     </div>
     <div class="col-sm-8 blog-main">
