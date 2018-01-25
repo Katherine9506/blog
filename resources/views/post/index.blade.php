@@ -45,7 +45,6 @@
                 </div>
             @endforeach
 
-
             {{$posts->links()}}
 
         </div><!-- /.blog-main -->

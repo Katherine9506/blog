@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return \App\User::paginate(1);
 });
+
 
 //用户模块
 //注册页面
@@ -34,7 +36,7 @@ Route::post('/user/me/setting', 'UserController@settingStore');
 include_once('admin.php');
 
 //文章列表页
-Route::get('/articles', 'PostController@index')->name('posts.list');
+Route::get('/posts', 'PostController@index');
 //创建文章
 Route::get('/posts/create', 'PostController@create');
 Route::post('/posts/', 'PostController@store');
